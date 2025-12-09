@@ -57,6 +57,7 @@
 </head>
 <body class="text-stone-800 flex flex-col min-h-screen">
 
+    <!-- Header -->
     <header class="bg-white shadow-sm border-b border-stone-200 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <div>
@@ -70,17 +71,19 @@
         </div>
     </header>
 
+    <!-- Navigation Tabs -->
     <nav class="bg-white shadow-sm mb-6">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex space-x-8 space-x-reverse overflow-x-auto">
-                <button onclick="switchTab('overview')" id="tab-overview" class="tab-active py-4 px-2">סריקה כללית</button>
-                <button onclick="switchTab('lesson1')" id="tab-lesson1" class="tab-inactive py-4 px-2">שיעור 1: החוקר המתחיל</button>
-                <button onclick="switchTab('lesson2')" id="tab-lesson2" class="tab-inactive py-4 px-2">שיעור 2: סדנת הכתיבה</button>
-                <button onclick="switchTab('lesson3')" id="tab-lesson3" class="tab-inactive py-4 px-2">שיעור 3: עולים לבמה</button>
+                <button onclick="switchTab('overview')" id="tab-overview" class="tab-active py-4 px-2 whitespace-nowrap">סריקה כללית</button>
+                <button onclick="switchTab('lesson1')" id="tab-lesson1" class="tab-inactive py-4 px-2 whitespace-nowrap">שיעור 1: החוקר המתחיל</button>
+                <button onclick="switchTab('lesson2')" id="tab-lesson2" class="tab-inactive py-4 px-2 whitespace-nowrap">שיעור 2: סדנת הכתיבה</button>
+                <button onclick="switchTab('lesson3')" id="tab-lesson3" class="tab-inactive py-4 px-2 whitespace-nowrap">שיעור 3: עולים לבמה</button>
             </div>
         </div>
     </nav>
 
+    <!-- Content -->
     <main class="flex-grow max-w-6xl mx-auto px-4 pb-12 w-full">
 
         <!-- OVERVIEW -->
@@ -88,8 +91,7 @@
             <section class="bg-white rounded-lg shadow p-6 border-r-4 border-amber-500">
                 <h2 class="text-xl font-bold mb-4">מבט על הפרויקט</h2>
                 <p class="text-stone-600 mb-4">
-                    ברוכים הבאים למרכז השליטה של פרויקט החקר. מטרת הכלי הזו היא ללוות את המורה והתלמידים בשלושה שיעורים:
-                    בחירת נושא אישי, עיבוד מידע למסמך, ויצירת מצגת מעולה.
+                    מטרת הכלי היא ללוות את התלמידים בתהליך החקר: בחירת נושא, עיבוד מידע, ויצירת מצגת.
                 </p>
             </section>
         </div>
@@ -98,45 +100,139 @@
         <div id="view-lesson1" class="hidden space-y-8 animate-fade-in">
             <section class="bg-amber-50 rounded-lg p-6 border border-amber-200">
                 <h2 class="text-2xl font-bold text-amber-800 mb-2">שיעור 1: בחירת נושא וחיפוש חכם</h2>
-                <p class="text-stone-700">התלמידים בוחרים נושא שמעניין אותם ומוודאים שהוא ממוקד וברור.</p>
+                <p class="text-stone-700">
+                    בשלב זה התלמידים בוחרים נושא שמעניין אותם, ומוודאים שהוא ממוקד.
+                </p>
             </section>
+
+            <!-- Interactive Topic Calculator -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-4 flex items-center"><span class="text-xl ml-2">??</span> מחשבון ציון נושא</h3>
+
+                    <div class="space-y-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">כמה זה מעניין אותך?</label>
+                            <input type="range" min="1" max="10" value="5" id="slider-interest" oninput="updateTopicChart()" class="w-full accent-amber-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">כמה הנושא ממוקד?</label>
+                            <input type="range" min="1" max="10" value="5" id="slider-specific" oninput="updateTopicChart()" class="w-full accent-amber-600">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">האם יש הרבה מידע?</label>
+                            <input type="range" min="1" max="10" value="5" id="slider-info" oninput="updateTopicChart()" class="w-full accent-amber-600">
+                        </div>
+                    </div>
+
+                    <div class="chart-container" style="height:200px;">
+                        <canvas id="topicChart"></canvas>
+                    </div>
+
+                    <p id="topic-feedback" class="text-center font-bold mt-4 text-stone-700"></p>
+                </div>
+            </div>
         </div>
 
         <!-- LESSON 2 -->
         <div id="view-lesson2" class="hidden space-y-8 animate-fade-in">
             <section class="bg-white rounded-lg shadow p-6 border-t-4 border-blue-500">
-                <h2 class="text-2xl font-bold text-stone-800 mb-2">שיעור 2: עיבוד מידע ויצירת מסמך</h2>
-                <p class="text-stone-600">הכתיבה מתחילה! מסדרים מידע, מוסיפים כותרות, תמונות ומקורות.</p>
+                <h2 class="text-2xl font-bold text-stone-800 mb-2">שיעור 2: עיבוד מידע וכתיבה</h2>
+                <p class="text-stone-600">בשלב זה התלמידים מסדרים מידע למסמך ברור.</p>
             </section>
+
+            <div class="chart-container">
+                <canvas id="docStructureChart"></canvas>
+            </div>
         </div>
 
         <!-- LESSON 3 -->
         <div id="view-lesson3" class="hidden space-y-8 animate-fade-in">
             <section class="bg-white rounded-lg shadow p-6 border-t-4 border-purple-500">
                 <h2 class="text-2xl font-bold text-stone-800 mb-2">שיעור 3: הפרזנטציה</h2>
-                <p class="text-stone-600">מעצבים שקופיות מאוזנות, נקיות ונעימות לקהל.</p>
+                <p class="text-stone-600">איך בונים מצגת טובה? פחות טקסט, יותר ויזואליה.</p>
             </section>
+
+            <div class="chart-container">
+                <canvas id="slideBalanceChart"></canvas>
+            </div>
         </div>
 
     </main>
 
+    <!-- Footer -->
     <footer class="bg-stone-800 text-stone-400 py-6 mt-auto">
-        <div class="max-w-6xl mx-auto px-4 text-center text-sm">
-            <p>© כלי לתכנון פרויקט חקר - שכבה ו'</p>
+        <div class="max-w-6xl mx-auto text-center">
+            © כלי עזר לתכנון שיעורים - שכבה ו'
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        function switchTab(id) {
-            document.querySelectorAll('[id^="view-"]').forEach(e => e.classList.add("hidden"));
-            document.getElementById(`view-${id}`).classList.remove("hidden");
+        function switchTab(tabId) {
+            document.querySelectorAll('[id^="view-"]').forEach(v => v.classList.add('hidden'));
+            document.getElementById(`view-${tabId}`).classList.remove('hidden');
 
-            document.querySelectorAll('[id^="tab-"]').forEach(e => {
-                e.classList.remove("tab-active");
-                e.classList.add("tab-inactive");
-            });
-            document.getElementById(`tab-${id}`).classList.add("tab-active");
+            document.querySelectorAll('[id^="tab-"]').forEach(t => t.classList.remove('tab-active'));
+            document.getElementById(`tab-${tabId}`).classList.add('tab-active');
         }
+
+        function updateTopicChart() {
+            const interest = document.getElementById('slider-interest').value;
+            const spec = document.getElementById('slider-specific').value;
+            const info = document.getElementById('slider-info').value;
+
+            const score = interest * 2 + spec * 5 + info * 3;
+            const feedback =
+                score > 75 ? "נושא מצוין!" :
+                score > 50 ? "סביר, כדאי למקד." :
+                "חלש, צריך כיוון מחדש.";
+
+            topicChart.data.datasets[0].data = [score];
+            topicChart.update();
+
+            document.getElementById("topic-feedback").innerText =
+                `ציון: ${score}/100 — ${feedback}`;
+        }
+
+        let topicChart, docStructureChart, slideBalanceChart;
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            topicChart = new Chart(document.getElementById("topicChart"), {
+                type: "bar",
+                data: {
+                    labels: ["ציון נושא"],
+                    datasets: [{
+                        data: [50],
+                        backgroundColor: "#fbbf24"
+                    }]
+                },
+                options: { indexAxis: "y" }
+            });
+
+            docStructureChart = new Chart(document.getElementById("docStructureChart"), {
+                type: "doughnut",
+                data: {
+                    labels: ["מבוא", "גוף", "סיכום", "מקורות"],
+                    datasets: [{
+                        data: [15, 60, 15, 10],
+                        backgroundColor: ["#a8a29e", "#3b82f6", "#a8a29e", "#e7e5e4"]
+                    }]
+                }
+            });
+
+            slideBalanceChart = new Chart(document.getElementById("slideBalanceChart"), {
+                type: "pie",
+                data: {
+                    labels: ["נקודות", "תמונות", "אוויר", "כותרת"],
+                    datasets: [{
+                        data: [20, 50, 20, 10],
+                        backgroundColor: ["#60a5fa", "#34d399", "#f3f4f6", "#1e3a8a"]
+                    }]
+                }
+            });
+        });
     </script>
 
 </body>
