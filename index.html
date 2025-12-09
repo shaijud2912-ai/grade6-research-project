@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>��� ����: ����� ������� ���� �'</title>
+    <title>מסע החקר: תכנית לימודים שכבה ו'</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -11,7 +11,7 @@
         
         body {
             font-family: 'Heebo', sans-serif;
-            background-color: #f5f5f4;
+            background-color: #f5f5f4; /* stone-100 */
         }
 
         .chart-container {
@@ -61,100 +61,270 @@
     <header class="bg-white shadow-sm border-b border-stone-200 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <div>
-                <h1 class="text-2xl font-bold text-stone-800">?? ������ ��� �����</h1>
-                <p class="text-sm text-stone-500">����� ������� ����� �' | ���, ����� ����, ��������</p>
+                <h1 class="text-2xl font-bold text-stone-800">📘 פרויקט חקר והצגה</h1>
+                <p class="text-sm text-stone-500">תכנית שיעורים לשכבה ו' | חקר, עיבוד מידע, פרזנטציה</p>
             </div>
             <div class="hidden md:block text-right">
-                <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-amber-400">3 �������</span>
-                <span class="bg-stone-100 text-stone-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-stone-300">����: ���� + ����</span>
+                <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-amber-400">3 שיעורים</span>
+                <span class="bg-stone-100 text-stone-800 text-xs font-semibold px-2.5 py-0.5 rounded border border-stone-300">תוצר: מסמך + מצגת</span>
             </div>
         </div>
     </header>
 
-    <!-- Navigation Tabs -->
+    <!-- Navigation (Tabs) -->
     <nav class="bg-white shadow-sm mb-6">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex space-x-8 space-x-reverse overflow-x-auto">
-                <button onclick="switchTab('overview')" id="tab-overview" class="tab-active py-4 px-2 whitespace-nowrap">����� �����</button>
-                <button onclick="switchTab('lesson1')" id="tab-lesson1" class="tab-inactive py-4 px-2 whitespace-nowrap">����� 1: ����� ������</button>
-                <button onclick="switchTab('lesson2')" id="tab-lesson2" class="tab-inactive py-4 px-2 whitespace-nowrap">����� 2: ���� ������</button>
-                <button onclick="switchTab('lesson3')" id="tab-lesson3" class="tab-inactive py-4 px-2 whitespace-nowrap">����� 3: ����� ����</button>
+                <button onclick="switchTab('overview')" id="tab-overview" class="tab-active py-4 px-2 whitespace-nowrap">סריקה כללית</button>
+                <button onclick="switchTab('lesson1')" id="tab-lesson1" class="tab-inactive py-4 px-2 whitespace-nowrap">שיעור 1: החוקר המתחיל</button>
+                <button onclick="switchTab('lesson2')" id="tab-lesson2" class="tab-inactive py-4 px-2 whitespace-nowrap">שיעור 2: סדנת הכתיבה</button>
+                <button onclick="switchTab('lesson3')" id="tab-lesson3" class="tab-inactive py-4 px-2 whitespace-nowrap">שיעור 3: עולים לבמה</button>
             </div>
         </div>
     </nav>
 
-    <!-- Content -->
+    <!-- Main Content Area -->
     <main class="flex-grow max-w-6xl mx-auto px-4 pb-12 w-full">
 
-        <!-- OVERVIEW -->
+        <!-- VIEW: OVERVIEW -->
         <div id="view-overview" class="space-y-8 animate-fade-in">
+            <!-- Intro Section -->
             <section class="bg-white rounded-lg shadow p-6 border-r-4 border-amber-500">
-                <h2 class="text-xl font-bold mb-4">��� �� �������</h2>
-                <p class="text-stone-600 mb-4">
-                    ���� ���� ��� ����� �� �������� ������ ����: ����� ����, ����� ����, ������ ����.
+                <h2 class="text-xl font-bold mb-4">מבט על הפרויקט</h2>
+                <p class="text-stone-600 mb-4 leading-relaxed">
+                    ברוכים הבאים למרכז השליטה של פרויקט החקר. מטרת האפליקציה הזו היא ללוות את המורה והתלמידים בתהליך של שלושה שיעורים: 
+                    החל מבחירת נושא אישי ומדויק, דרך עיבוד המידע למסמך אקדמי בסיסי, ועד ליצירת מצגת ויזואלית מנצחת.
+                    כאן תוכלו לראות את רצף העבודה ולגשת לכלים אינטראקטיביים שיעזרו בהבנת המשימות.
                 </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-stone-50 p-4 rounded-lg text-center">
+                        <div class="text-3xl mb-2">🕵️</div>
+                        <h3 class="font-bold text-stone-700">שיעור 1</h3>
+                        <p class="text-sm text-stone-500">בחירת נושא וחיפוש חכם</p>
+                    </div>
+                    <div class="bg-stone-50 p-4 rounded-lg text-center">
+                        <div class="text-3xl mb-2">📝</div>
+                        <h3 class="font-bold text-stone-700">שיעור 2</h3>
+                        <p class="text-sm text-stone-500">עיבוד מידע וכתיבה בוורד</p>
+                    </div>
+                    <div class="bg-stone-50 p-4 rounded-lg text-center">
+                        <div class="text-3xl mb-2">🎤</div>
+                        <h3 class="font-bold text-stone-700">שיעור 3</h3>
+                        <p class="text-sm text-stone-500">עיצוב מצגת ופרזנטציה</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Goals Visualization -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-4 text-stone-800 border-b pb-2">חלוקת זמן והשקעה</h3>
+                    <p class="text-sm text-stone-500 mb-4">כיצד נחלק את המאמץ לאורך שלושת המפגשים?</p>
+                    <div class="chart-container">
+                        <canvas id="overviewChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6 flex flex-col justify-center">
+                    <h3 class="font-bold text-lg mb-4 text-stone-800 border-b pb-2">תוצרים סופיים</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-2xl ml-3">📄</span>
+                            <div>
+                                <strong class="block text-stone-800">מסמך וורד מעוצב</strong>
+                                <span class="text-sm text-stone-500">כולל כותרות, פסקאות, תמונה ומקורות. כתוב במילים שלכם.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl ml-3">📊</span>
+                            <div>
+                                <strong class="block text-stone-800">מצגת מלווה</strong>
+                                <span class="text-sm text-stone-500">7 שקופיות, מעט מלל, הרבה ויזואליזציה.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </div>
 
-        <!-- LESSON 1 -->
+        <!-- VIEW: LESSON 1 -->
         <div id="view-lesson1" class="hidden space-y-8 animate-fade-in">
             <section class="bg-amber-50 rounded-lg p-6 border border-amber-200">
-                <h2 class="text-2xl font-bold text-amber-800 mb-2">����� 1: ����� ���� ������ ���</h2>
+                <h2 class="text-2xl font-bold text-amber-800 mb-2">שיעור 1: בחירת נושא וחיפוש חכם</h2>
                 <p class="text-stone-700">
-                    ���� �� �������� ������ ���� ������� ����, �������� ���� �����.
+                    בשלב זה התלמידים בוחרים נושא שמעניין אותם. המטרה: לצאת עם נושא סופי ו-3 מקורות מידע.
+                    האתגר הגדול הוא לבחור נושא <strong>ממוקד</strong> ולא רחב מדי. השתמשו במחשבון למטה כדי לבדוק את הנושא שלכם.
                 </p>
             </section>
 
-            <!-- Interactive Topic Calculator -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Interactive Tool: Topic Validator -->
                 <div class="bg-white rounded-lg shadow p-6">
-                    <h3 class="font-bold text-lg mb-4 flex items-center"><span class="text-xl ml-2">??</span> ������ ���� ����</h3>
-
+                    <h3 class="font-bold text-lg mb-4 flex items-center">
+                        <span class="text-xl ml-2">🧮</span> מחשבון ציון נושא
+                    </h3>
+                    <p class="text-sm text-stone-500 mb-6">הזיזו את הסרגלים כדי לראות האם הנושא שלכם מתאים לפרויקט.</p>
+                    
                     <div class="space-y-6 mb-6">
                         <div>
-                            <label class="block text-sm font-medium text-stone-700 mb-1">��� �� ������ ����?</label>
-                            <input type="range" min="1" max="10" value="5" id="slider-interest" oninput="updateTopicChart()" class="w-full accent-amber-600">
+                            <label class="block text-sm font-medium text-stone-700 mb-1">כמה הנושא מעניין אותך? (עניין אישי)</label>
+                            <input type="range" min="1" max="10" value="5" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-amber-600" id="slider-interest" oninput="updateTopicChart()">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-stone-700 mb-1">��� ����� �����?</label>
-                            <input type="range" min="1" max="10" value="5" id="slider-specific" oninput="updateTopicChart()" class="w-full accent-amber-600">
+                            <label class="block text-sm font-medium text-stone-700 mb-1">האם הנושא ממוקד? (לא כללי מדי)</label>
+                            <input type="range" min="1" max="10" value="5" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-amber-600" id="slider-specific" oninput="updateTopicChart()">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-stone-700 mb-1">��� �� ���� ����?</label>
-                            <input type="range" min="1" max="10" value="5" id="slider-info" oninput="updateTopicChart()" class="w-full accent-amber-600">
+                            <label class="block text-sm font-medium text-stone-700 mb-1">זמינות מידע (האם קל למצוא?)</label>
+                            <input type="range" min="1" max="10" value="5" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-amber-600" id="slider-info" oninput="updateTopicChart()">
                         </div>
                     </div>
 
-                    <div class="chart-container" style="height:200px;">
+                    <div class="chart-container" style="height: 200px;">
                         <canvas id="topicChart"></canvas>
                     </div>
-
                     <p id="topic-feedback" class="text-center font-bold mt-4 text-stone-700"></p>
+                </div>
+
+                <!-- Content: Search Skills -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="font-bold text-lg mb-4 text-stone-800">אסטרטגיית מילות מפתח</h3>
+                        <p class="text-sm text-stone-600 mb-4">במקום לשאול שאלה מלאה, בחרו 3 מילות כוח.</p>
+                        
+                        <div class="bg-stone-100 p-4 rounded border border-stone-200">
+                            <p class="text-stone-500 text-xs mb-1">דוגמה לחיפוש שגוי:</p>
+                            <p class="text-red-600 line-through mb-3">"מתי בנו את הפירמידות במצרים?"</p>
+                            <p class="text-stone-500 text-xs mb-1">דוגמה לחיפוש נכון:</p>
+                            <div class="flex space-x-2 space-x-reverse">
+                                <span class="bg-white px-2 py-1 rounded shadow text-sm font-bold text-amber-700">פירמידות</span>
+                                <span class="bg-white px-2 py-1 rounded shadow text-sm font-bold text-amber-700">גיל</span>
+                                <span class="bg-white px-2 py-1 rounded shadow text-sm font-bold text-amber-700">בניה</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="font-bold text-lg mb-4 text-stone-800">מקורות מידע: למי להאמין?</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center justify-between p-2 bg-green-50 rounded border border-green-100">
+                                <span>🏛️ אתרים רשמיים/מוזיאונים</span>
+                                <span class="text-green-700 font-bold text-sm">אמין מאוד</span>
+                            </li>
+                            <li class="flex items-center justify-between p-2 bg-blue-50 rounded border border-blue-100">
+                                <span>📰 אתרי חדשות גדולים</span>
+                                <span class="text-blue-700 font-bold text-sm">אמין</span>
+                            </li>
+                            <li class="flex items-center justify-between p-2 bg-yellow-50 rounded border border-yellow-100">
+                                <span>🌐 ויקיפדיה</span>
+                                <span class="text-yellow-700 font-bold text-sm">טוב להתחלה (לבדוק מקורות)</span>
+                            </li>
+                            <li class="flex items-center justify-between p-2 bg-red-50 rounded border border-red-100">
+                                <span>👤 בלוג פרטי / רשת חברתית</span>
+                                <span class="text-red-700 font-bold text-sm">חשד! לבדוק שוב</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- LESSON 2 -->
+        <!-- VIEW: LESSON 2 -->
         <div id="view-lesson2" class="hidden space-y-8 animate-fade-in">
             <section class="bg-white rounded-lg shadow p-6 border-t-4 border-blue-500">
-                <h2 class="text-2xl font-bold text-stone-800 mb-2">����� 2: ����� ���� ������</h2>
-                <p class="text-stone-600">���� �� �������� ������ ���� ����� ����.</p>
+                <h2 class="text-2xl font-bold text-stone-800 mb-2">שיעור 2: עיבוד מידע ויצירת מסמך</h2>
+                <p class="text-stone-600">
+                    הגענו לשלב הכתיבה. כאן נלמד איך לארגן את המידע שמצאנו למסמך אקדמי מסודר.
+                    הכלל החשוב ביותר: <strong>לא להעתיק ולהדביק!</strong> קוראים, מבינים, וכותבים במילים שלנו.
+                </p>
             </section>
 
-            <div class="chart-container">
-                <canvas id="docStructureChart"></canvas>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Structure Chart -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-4 text-stone-800">מבנה המסמך המושלם</h3>
+                    <p class="text-sm text-stone-500 mb-4">חלוקת הנפח במסמך החקר. שימו לב שגוף העבודה הוא העיקר.</p>
+                    <div class="chart-container">
+                        <canvas id="docStructureChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Word Skills Checklist -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-4 text-stone-800">ארגז כלים ל-Word</h3>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-stone-50 rounded border-r-4 border-stone-400 hover:bg-stone-100 transition cursor-help group">
+                            <h4 class="font-bold">1. כותרות (Styles)</h4>
+                            <p class="text-sm text-stone-600 mt-1">שימוש ב"כותרת 1" ו"כותרת 2" כדי שהמחשב יבין את המבנה.</p>
+                        </div>
+                        <div class="p-3 bg-stone-50 rounded border-r-4 border-stone-400 hover:bg-stone-100 transition cursor-help group">
+                            <h4 class="font-bold">2. תבליטים ומספור</h4>
+                            <p class="text-sm text-stone-600 mt-1">לרשימת עובדות או שלבים. עושה סדר בעיניים.</p>
+                        </div>
+                        <div class="p-3 bg-stone-50 rounded border-r-4 border-stone-400 hover:bg-stone-100 transition cursor-help group">
+                            <h4 class="font-bold">3. תמונות וכיתוב (Caption)</h4>
+                            <p class="text-sm text-stone-600 mt-1">לא סתם לזרוק תמונה. להוסיף שורת הסבר קטנה מתחת.</p>
+                        </div>
+                        <div class="p-3 bg-stone-50 rounded border-r-4 border-stone-400 hover:bg-stone-100 transition cursor-help group">
+                            <h4 class="font-bold">4. קרדיט (מקורות)</h4>
+                            <p class="text-sm text-stone-600 mt-1">בסוף המסמך חובה להדביק את רשימת הקישורים שהשתמשנו בהם.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- LESSON 3 -->
+        <!-- VIEW: LESSON 3 -->
         <div id="view-lesson3" class="hidden space-y-8 animate-fade-in">
             <section class="bg-white rounded-lg shadow p-6 border-t-4 border-purple-500">
-                <h2 class="text-2xl font-bold text-stone-800 mb-2">����� 3: ���������</h2>
-                <p class="text-stone-600">��� ����� ���� ����? ���� ����, ���� ��������.</p>
+                <h2 class="text-2xl font-bold text-stone-800 mb-2">שיעור 3: הפרזנטציה</h2>
+                <p class="text-stone-600">
+                    הופכים את המסמך למצגת. הכלל המנחה: <strong>"פחות זה יותר"</strong>.
+                    המצגת לא מחליפה את הדובר, היא רק תומכת בו.
+                </p>
             </section>
 
-            <div class="chart-container">
-                <canvas id="slideBalanceChart"></canvas>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Slide Balance Interactive -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-2 text-stone-800">איזון בשקופית</h3>
+                    <p class="text-sm text-stone-500 mb-4">לחצו על הכפתורים כדי לראות את ההבדל בין שקופית טובה לרעה.</p>
+                    
+                    <div class="flex space-x-4 space-x-reverse mb-4">
+                        <button onclick="updateSlideChart('bad')" class="px-4 py-2 bg-red-100 text-red-700 rounded hover:bg-red-200 font-bold text-sm">שקופית עמוסה (רע)</button>
+                        <button onclick="updateSlideChart('good')" class="px-4 py-2 bg-green-100 text-green-700 rounded hover:bg-green-200 font-bold text-sm">שקופית מאוזנת (טוב)</button>
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="slideBalanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Slide Structure Map -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="font-bold text-lg mb-4 text-stone-800">מפת המצגת (7 שקופיות)</h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="flex items-center p-2 bg-purple-50 rounded border border-purple-100">
+                            <span class="font-bold text-purple-800 w-8">1</span>
+                            <span class="text-sm text-purple-900">כותרת + שם התלמיד + תמונה יפה</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-purple-50 rounded border border-purple-100">
+                            <span class="font-bold text-purple-800 w-8">2</span>
+                            <span class="text-sm text-purple-900">מבוא: שאלת החקר (מה אני הולך לספר?)</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-white rounded border border-stone-200 border-dashed">
+                            <span class="font-bold text-stone-400 w-8">3-5</span>
+                            <span class="text-sm text-stone-600">גוף המצגת: נקודות עיקריות + תמונות (לא פסקאות!)</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-purple-50 rounded border border-purple-100">
+                            <span class="font-bold text-purple-800 w-8">6</span>
+                            <span class="text-sm text-purple-900">סיכום ומסקנות (מה למדתי חדש?)</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-purple-50 rounded border border-purple-100">
+                            <span class="font-bold text-purple-800 w-8">7</span>
+                            <span class="text-sm text-purple-900">תודה רבה + מקורות</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -162,78 +332,213 @@
 
     <!-- Footer -->
     <footer class="bg-stone-800 text-stone-400 py-6 mt-auto">
-        <div class="max-w-6xl mx-auto text-center">
-            � ��� ��� ������ ������� - ���� �'
+        <div class="max-w-6xl mx-auto px-4 text-center text-sm">
+            <p>© כלי עזר לתכנון שיעורים - שכבה ו'</p>
+            <p class="mt-2 text-stone-600">פותח כחלק מהדגמה טכנולוגית חינוכית</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JavaScript Logic -->
     <script>
-        function switchTab(tabId) {
-            document.querySelectorAll('[id^="view-"]').forEach(v => v.classList.add('hidden'));
-            document.getElementById(`view-${tabId}`).classList.remove('hidden');
+        let currentTab = 'overview';
+        let charts = {};
 
-            document.querySelectorAll('[id^="tab-"]').forEach(t => t.classList.remove('tab-active'));
+        document.addEventListener('DOMContentLoaded', () => {
+            initOverviewChart();
+            initTopicChart();
+            initDocStructureChart();
+            initSlideBalanceChart();
+        });
+
+        function switchTab(tabId) {
+            document.querySelectorAll('[id^="view-"]').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`view-${tabId}`).classList.remove('hidden');
+            
+            document.querySelectorAll('[id^="tab-"]').forEach(el => {
+                el.classList.remove('tab-active');
+                el.classList.add('tab-inactive');
+            });
+            document.getElementById(`tab-${tabId}`).classList.remove('tab-inactive');
             document.getElementById(`tab-${tabId}`).classList.add('tab-active');
+
+            currentTab = tabId;
+
+            if(charts[tabId] && charts[tabId].resize) {
+                charts[tabId].resize();
+            }
+        }
+
+        function initOverviewChart() {
+            const ctx = document.getElementById('overviewChart').getContext('2d');
+            charts['overview'] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['שיעור 1', 'שיעור 2', 'שיעור 3'],
+                    datasets: [{
+                        label: 'רמת אנרגיה נדרשת (1-10)',
+                        data: [7, 9, 6],
+                        backgroundColor: ['#d97706', '#3b82f6', '#9333ea'],
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const tips = [
+                                        'התמקדות בחיפוש וקבלת החלטות',
+                                        'כתיבה מרוכזת וארגון מידע',
+                                        'יצירתיות ועיצוב ויזואלי'
+                                    ];
+                                    return tips[context.dataIndex];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, max: 10, title: { display: true, text: 'מאמץ קוגניטיבי' } }
+                    }
+                }
+            });
+        }
+
+        function initTopicChart() {
+            const ctx = document.getElementById('topicChart').getContext('2d');
+            charts['lesson1'] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['פוטנציאל הצלחה'],
+                    datasets: [{
+                        label: 'ציון נושא',
+                        data: [50],
+                        backgroundColor: '#fbbf24',
+                        borderRadius: 10,
+                        barThickness: 40
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { min: 0, max: 100 }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+            updateTopicChart();
         }
 
         function updateTopicChart() {
-            const interest = document.getElementById('slider-interest').value;
-            const spec = document.getElementById('slider-specific').value;
-            const info = document.getElementById('slider-info').value;
+            const interest = parseInt(document.getElementById('slider-interest').value);
+            const specific = parseInt(document.getElementById('slider-specific').value);
+            const info = parseInt(document.getElementById('slider-info').value);
+            
+            let score = (interest * 2) + (specific * 5) + (info * 3);
 
-            const score = interest * 2 + spec * 5 + info * 3;
-            const feedback =
-                score > 75 ? "���� �����!" :
-                score > 50 ? "����, ���� ����." :
-                "���, ���� ����� ����.";
+            let color = '#ef4444';
+            let feedback = "הנושא כנראה קשה מדי או לא ממוקד.";
 
-            topicChart.data.datasets[0].data = [score];
-            topicChart.update();
+            if (score > 50) { 
+                color = '#f59e0b'; 
+                feedback = "התחלה טובה, אולי כדאי למקד עוד קצת."; 
+            }
+            if (score > 75) { 
+                color = '#22c55e'; 
+                feedback = "נושא מצוין! צאו לדרך."; 
+            }
 
-            document.getElementById("topic-feedback").innerText =
-                `����: ${score}/100 � ${feedback}`;
+            charts['lesson1'].data.datasets[0].data = [score];
+            charts['lesson1'].data.datasets[0].backgroundColor = color;
+            charts['lesson1'].update();
+            
+            document.getElementById('topic-feedback').innerText = `ציון משוקלל: ${score}/100 - ${feedback}`;
         }
 
-        let topicChart, docStructureChart, slideBalanceChart;
-
-        document.addEventListener("DOMContentLoaded", () => {
-
-            topicChart = new Chart(document.getElementById("topicChart"), {
-                type: "bar",
+        function initDocStructureChart() {
+            const ctx = document.getElementById('docStructureChart').getContext('2d');
+            charts['lesson2'] = new Chart(ctx, {
+                type: 'doughnut',
                 data: {
-                    labels: ["���� ����"],
-                    datasets: [{
-                        data: [50],
-                        backgroundColor: "#fbbf24"
-                    }]
-                },
-                options: { indexAxis: "y" }
-            });
-
-            docStructureChart = new Chart(document.getElementById("docStructureChart"), {
-                type: "doughnut",
-                data: {
-                    labels: ["����", "���", "�����", "������"],
+                    labels: ['מבוא', 'גוף העבודה (החקר)', 'סיכום ומסקנות', 'מקורות'],
                     datasets: [{
                         data: [15, 60, 15, 10],
-                        backgroundColor: ["#a8a29e", "#3b82f6", "#a8a29e", "#e7e5e4"]
+                        backgroundColor: ['#a8a29e', '#3b82f6', '#a8a29e', '#e7e5e4'],
+                        borderWidth: 0
                     }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const labels = [
+                                        'למה בחרתי בנושא? (פסקה 1)',
+                                        'המידע שמצאתי, מחולק לפסקאות (3–4 פסקאות)',
+                                        'מה למדתי חדש? (פסקה 1)',
+                                        'רשימת קישורים מסודרת'
+                                    ];
+                                    return labels[context.dataIndex];
+                                }
+                            }
+                        }
+                    }
                 }
             });
+        }
 
-            slideBalanceChart = new Chart(document.getElementById("slideBalanceChart"), {
-                type: "pie",
-                data: {
-                    labels: ["������", "������", "�����", "�����"],
+        function initSlideBalanceChart() {
+            const ctx = document.getElementById('slideBalanceChart').getContext('2d');
+            charts['lesson3'] = new Chart(ctx, {
+                type: 'pie',
+                data: getSlideData('good'),
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: 'הרכב שקופית מומלץ' },
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        }
+
+        function getSlideData(type) {
+            if (type === 'good') {
+                return {
+                    labels: ['טקסט (נקודות)', 'תמונות/ויזואליה', 'שטח ריק (אוויר)', 'כותרת'],
                     datasets: [{
                         data: [20, 50, 20, 10],
-                        backgroundColor: ["#60a5fa", "#34d399", "#f3f4f6", "#1e3a8a"]
+                        backgroundColor: ['#60a5fa', '#34d399', '#f3f4f6', '#1e3a8a']
                     }]
-                }
-            });
-        });
-    </script>
+                };
+            } else {
+                return {
+                    labels: ['טקסט (פסקאות ארוכות)', 'תמונות', 'שטח ריק', 'כותרת'],
+                    datasets: [{
+                        data: [85, 5, 0, 10],
+                        backgroundColor: ['#ef4444', '#34d399', '#f3f4f6', '#1e3a8a']
+                    }]
+                };
+            }
+        }
 
+        function updateSlideChart(type) {
+            charts['lesson3'].data = getSlideData(type);
+            charts['lesson3'].options.plugins.title.text =
+                type === 'good'
+                    ? 'הרכב שקופית מומלץ (נעים לעין)'
+                    : 'שקופית עמוסה (הקהל נרדם)';
+            charts['lesson3'].update();
+        }
+
+    </script>
 </body>
 </html>
